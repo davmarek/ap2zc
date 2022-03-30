@@ -79,20 +79,25 @@ User sort(User users[], size_t length) {
 }
 
 int main() {
-    User users[3];
-    strcpy(users[0].name, "Petr");
-    strcpy(users[1].name, "Dominik");
-    strcpy(users[2].name, "David");
+    int length = 6;
+    User users[length];
+    strcpy(users[0].name, "Pzeter");
+    strcpy(users[2].name, "Dominikek");
+    strcpy(users[1].name, "Zara");
+    strcpy(users[3].name, "Pater");
+    strcpy(users[4].name, "Domimik");
+    strcpy(users[3].name, "Peter");
+    strcpy(users[5].name, "David");
 
     printf("Před seřazením:\n");
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < length; ++i) {
         printf("User: %s\n", users[i].name);
     }
 
-    sort(users, 3);
+    sort(users, length);
 
     printf("Po seřazení:\n");
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < length; ++i) {
         printf("User: %s\n", users[i].name);
     }
     return 0;
