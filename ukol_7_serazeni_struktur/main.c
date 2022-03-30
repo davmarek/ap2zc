@@ -7,7 +7,9 @@ typedef struct {
     char street[50];
 } User;
 
+// Metoda která prohodí všechny atributy dvou uživatelů
 void swapUsers(User *left, User *right) {
+
     char tmpName[50];
     strcpy(tmpName, right->name);
     strcpy(right->name, left->name);
@@ -24,20 +26,34 @@ void swapUsers(User *left, User *right) {
     strcpy(left->street, tmpStreet);
 }
 
+// Upravený bubble-sort
 User sort(User users[], size_t length) {
+    // ii = počet iterací (kolikrát sort jede)
     for (int ii = 0; ii < length; ++ii)
+        // projde každý znak kromě posledního (ten nemá žádný další prvek napravo od něj)
+        // "- ii" je tam protože nepotřebujeme kontrolovat posledních "ii" prvků
+        // protože už "probublali" na konec
         for (int i = 0; i < length - 1 - ii; ++i) {
+            // j = pomocná proměná při procházení stringu name
             int j = 0;
+            // c1 = char aktuálního usera (na indexu i)
+            // c2 = char usera za aktuálním userem  [i + 1]
             char c1 = users[i].name[j];
             char c2 = users[i + 1].name[j];
 
+            // pokud ASCII hodnota znaku c1 je menší než c2 (A=65 ... Z=90)
+            // tak aktuální uživatel je abecedně výš
             if (c1 < c2) continue;
 
+            // pokud je to naopak tak je user na [i + 1] abecedně výš než ten aktuální
             if (c1 > c2) {
+                // uživatelé se prohodí a jde se na další ho uživatele
                 swapUsers(&users[i], &users[i + 1]);
                 continue;
             }
 
+            // pokud c1 není ani menší ani větší, tak jsou určitě stejné
+            // musí se prokontrolovat i další znaky/zbytek slova
             ++j;
             c1 = users[i].name[j];
             c2 = users[i + 1].name[j];
