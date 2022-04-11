@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+// Zadání:
+// metoda, která vrací počet čísel ve stringu
+// + ukázkový běh programu
 int numbersContained(const char *text) {
     int count = 0;
     int i = 0;
