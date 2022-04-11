@@ -1,6 +1,8 @@
 # AP2ZC - Základy programování v C
 Tento repozitář obsahuje všechny projekty ze cvičení a domácí úkoly ze předmětu AP2ZC, skupina **Forman** (pátek 8-10)
 
+> **Upozornění** - Všechen kód je moje řešení, nejedná se o jedinnou správnou verzi!
+
 **Naklonujte si ho pomocí:**
 ```bash
 git clone https://github.com/davmarek/ap2zc.git
